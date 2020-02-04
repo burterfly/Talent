@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- org.hnist.dao.UserMapper对应的接口 -->
+
+<mapper namespace="com.oracle.ysyj.dao.HouseMapper">	
+
+
+ <!-- 查询所有房源 -->  
+    	<select id="listAllHouse" resultType="House">		
+    	  select * from house  where Sid=#{Sid}
+    	</select>
+
+ <!-- 查询未审核/未发布房源 -->  
+    	<select id="listnotauditedHouse" resultType="House">		
+    	  select * from house  where HState=0  and Sid=#{Sid}  <!-- 当HState为1时，代表已发布，当HState为0时，代表未发布 -->  
+    	</select>
+
+<!-- 查询已发布房源 -->  
+    	<select id="PublishedHouse" resultType="House">		
+    	  select * from house  where HState=1 and Sid=#{Sid}   <!-- 当HState为1时，代表已发布，当HState为0时，代表未发布 -->  
+    	</select>
+
+<!-- 显示未审核房源/已发布房源详情信息 -->  
+    	<select id="Notauditeddetail" resultType="com.oracle.ysyj.model.HouseAddType">		
+    <!--  	  select * from  house   where OHid = #{OHid}   -->
+    <!-- 将房源编号为HId的房的信息提出来 -->  
+    	 select * from house,type,staffmessage where house.TId=type.TId and house.Sid=staffmessage.SId and OHid= #{OHid}    	  
+    	</select>
+
+<!-- 查询指定HId房源 -->  
+    	<select id="selectHouse" resultType="House" >		
+    	    select * from  house   where  OHid like concat('%',#{OHid},'%') and  house.HState=#{HState} and Sid=#{Sid}
+    	</select>
+    	
+    	
+    	<!-- 查询指定HId房源2 -->  
+    	<select id="selectHousetwo" resultType="House" >		
+    	    select * from  house   where  OHid like concat('%',#{OHid},'%') and HState=1 and Sid=#{Sid} 
+    	</select>
+    	
+    	<!-- 查询指定HId房源3 -->  
+    	<select id="selectHousethree" resultType="House" >		
+    	    select * from  house   where  OHid like concat('%',#{OHid},'%') and  HState=0 and Sid=#{Sid} 
+    	</select>
+    	
+    	<!-- 删除未审核房源house -->  
+    	<select id="delhouser" resultType="House" >		
+	    	delete from house where OHid=#{OHid}
+    	</select>
+    	
+    	<!-- 删除未审核房源 type-->  
+    	<select id="deltype" resultType="House" >		
+	    	delete from type where Tid=#{Tid}
+    	</select>
+    	
+    	 <!-- 发布房源type -->  
+    	<select id="addhouseself3" parameterType="com.oracle.ysyj.model.HouseAddType" resultType="com.oracle.ysyj.model.HouseAddType" >		
+         insert type (TAir,TParking,THall,TBedroom,TKitchen,TToilet,THotWater,TWifi,TWaterElec)
+	     value 
+		(#{TAir},#{TParking},#{THall},#{TBedroom},#{TKitchen},#{TToilet},#{THotWater},#{TWifi},#{TWaterElec})
+		
+			
+    	</select>
+    		
+    		<!-- 找刚才加的Tid-->  
+    	<select id="addhouseself2" resultType="Integer">		
+			select TId from type order by TId desc limit 1
+    	</select>
+    	
+    	<!-- 找刚才加的OHid-->  
+    	<select id="addhouseself4" resultType="Integer">		
+			select OHid from house order by OHid desc limit 1
+    	</select>
+    	
+       
+    	
+    	<!-- 发布房源house -->  
+    	<select id="addhouseself" parameterType="com.oracle.ysyj.model.HouseAddType" >		
+         insert house (HName,HTel,HHouseName,HAddress,HArea,HPrice,HSurroud,HTraffic,HCertificate,HWay,Sid,HState,HBusiness,TId)
+	     value 
+		(#{HName},#{HTel},#{HHouseName},#{HAddress},#{HArea},#{HPrice},#{HSurroud},#{HTraffic},
+		#{HCertificate},#{HWay},#{Sid},#{HState},#{HBusiness},#{TId})		
+    	</select>
+    	
+    	
+    	 <!-- 修改房源house -->
+    	<update id="updatehouse" parameterType="com.oracle.ysyj.model.HouseAddType">
+    	
+    	    	update house set 
+    	    	HName=#{HName},HTel=#{HTel},HHouseName=#{HHouseName},HAddress=#{HAddress},HArea=#{HArea},HPrice=#{HPrice},
+    	    	HSurroud=#{HSurroud},HTraffic=#{HTraffic},HCertificate=#{HCertificate},HWay=#{HWay},HState=#{HState},
+    	    	HBusiness=#{HBusiness}    where  	OHid= #{OHid} 
+    	    	
+    	</update>
+    	 <!-- 修改房源type -->
+    	<update id="updatetype" parameterType="com.oracle.ysyj.model.HouseAddType">
+    	
+    	    	update type set 
+    	    	TAir=#{TAir},TParking=#{TParking},THall=#{THall},TBedroom=#{TBedroom},TKitchen=#{TKitchen},TToilet=#{TToilet},
+    	    	THotWater=#{THotWater},TWifi=#{TWifi},TWaterElec=#{TWaterElec}
+    	  where  	TId= #{TId} 
+    	    	
+    	</update>
+    	
+</mapper>
