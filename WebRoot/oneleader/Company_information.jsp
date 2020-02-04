@@ -59,14 +59,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <li>
    <dl>
     <dt>功能管理</dt>
-    <!--当前链接则添加class:active 
-    
-    <dd><a href="../twoadmin/listAllHouse.do?SId=1" class="active">个人信息</a></dd>
-    <dd><a href="../twoadmin/listnotauditedHouse.do?SId=1" >履职经历</a></dd>
-    <dd><a href="../twoadmin/PublishedHouse.do?SId=1">工资明细</a></dd>
-    <dd><a href="../twoadmin/topublishhouse.do">目前工作</a></dd>     
-    -->
-      <dd><a href="Company_information.jsp" class="active">公司信息</a></dd>
+    <dd><a href="Company_information.jsp" class="active">公司信息</a></dd>
     <dd><a href="Contract.jsp" >合同管理</a></dd>
     <dd><a href="Pay.jsp">工资支出</a></dd>
     <dd><a href="Talent_information.jsp">聘用记录</a></dd>     
