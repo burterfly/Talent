@@ -61,7 +61,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <dt>功能管理</dt>
      <dd><a href="Company_information.jsp" >公司信息</a></dd>
     <dd><a href="Contract.jsp">合同管理</a></dd>
-    <dd><a href="Pay.jsp" >工资支出</a></dd>
+   
     <dd><a href="Talent_information.jsp"   class="active">聘用记录</a></dd>     
  
    </dl>
@@ -105,6 +105,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <td class="center">英语</td> 
          <td class="center">2015/8-2015/9</td> 
           <td class="center">5</td>            
+       </tr>   
+                  
+                   <tr>
+        <td class="center">韩梅梅</td>                                 
+        <td class="center">25</td>               
+        <td class="center">女</td>                
+        <td class="center">无</td>
+        <td class="center">本科</td>
+        <td class="center">英语</td> 
+         <td class="center">2015/8-2015/9</td> 
+          <td class="center">待评分</td>            
        </tr>   
                         
       </table>

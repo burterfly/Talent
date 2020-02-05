@@ -13,7 +13,7 @@
 
     <!-- 注解扫描包,使SpringMVC认为包下用了@controller注解的类是控制器 -->
    
-   <context:component-scan base-package="com.oracle.ysyj.controller" />
+   <context:component-scan base-package="com.oracle.rcpq.controller" />
     <!-- 开启注解 -->
     <mvc:annotation-driven />
 

@@ -81,12 +81,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
       <table class="table">
        <tr>
         <th style="width: 70px; ">姓名</th>
-         <th style="width: 70px; ">年龄</th>
+        <th style="width: 70px; ">年龄</th>
         <th style="width: 70px; ">性别</th>                  
         <th style="width: 70px; ">资格证书</th>        
         <th style="width: 70px; ">教育经历</th>                                 
         <th style="width: 70px; ">业务技能</th>     
-        <th style="width: 70px; ">评分</th>   
+        <th style="width: 70px; ">评分</th> 
+        <th style="width: 70px; ">工资结算</th> 
+        <th style="width: 70px; ">履职经历</th>  
+         <th style="width: 70px; ">合同管理</th>
         <th style="width: 70px; ">操作</th>    
        </tr>
                     
@@ -97,9 +100,27 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <td class="center">无</td>
         <td class="center">本科</td>
         <td class="center">英语</td>     
-         <td class="center">5</td> 
-          <td class="center">删除/添加</td>           
+        <td class="center">5</td> 
+        <td class="center"><a href="Uwage.jsp" >前往</a></td> 
+        <td class="center"><a href="Uexp.jsp" >前往</a></td> 
+         <td class="center"><a href="Ucontract.jsp" >前往</a></td> 
+        <td class="center">删除/添加</td>           
        </tr>   
+       
+        <tr>
+        <td class="center">hello</td>                                 
+        <td class="center">25</td>               
+        <td class="center">女</td>                
+        <td class="center">无</td>
+        <td class="center">本科</td>
+        <td class="center">英语</td>     
+        <td class="center">5</td> 
+        <td class="center"><a href="Uwage.jsp" >前往</a></td> 
+        <td class="center"><a href="Uexp.jsp" >前往</a></td> 
+          <td class="center"><a href="Ucontract.jsp" >前往</a></td> 
+        <td class="center">删除/添加</td>           
+       </tr>   
+       
                         
       </table>
     

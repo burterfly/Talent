@@ -5,13 +5,13 @@
 
     <typeAliases>
   
-    <typeAlias alias="House" type="com.oracle.ysyj.model.House"/>
+    <typeAlias alias="Talent" type="com.oracle.rcpq.model.Talent"/>
    
     </typeAliases>
     
         
     <mappers>
-   <mapper resource="com/oracle/ysyj/dao/HouseMapper.xml" />
+   <mapper resource="com/oracle/rcpq/dao/TalentMapper.xml" />
   
     </mappers>
        

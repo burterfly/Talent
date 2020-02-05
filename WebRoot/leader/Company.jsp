@@ -82,7 +82,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <th style="width: 70px; ">名称</th>
          <th style="width: 70px; ">办公地点</th>
         <th style="width: 70px; ">注册时间</th>                  
-        <th style="width: 70px; ">主营业务</th>    
+        <th style="width: 70px; ">主营业务</th> 
+         <th style="width: 70px; ">合同详情</th>    
          <th style="width: 70px; ">操作</th>             
        </tr>
                     
@@ -90,7 +91,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <td class="center">人民银行</td>                                 
         <td class="center">湖南省长沙市五一大道</td>               
         <td class="center">1999/8</td>                
-        <td class="center">柜台</td>    
+        <td class="center">存钱</td>   
+        <td class="center"> <a href="Ccontract.jsp"  >详情</a></td>    
+         <td class="center">删除/新增</td>              
+       </tr>   
+       
+         <tr>
+        <td class="center">人民银行</td>                                 
+        <td class="center">湖南省长沙市五一大道</td>               
+        <td class="center">1999/8</td>                
+        <td class="center">存钱</td>   
+        <td class="center"> <a href="Ccontract.jsp" >详情</a></td>    
          <td class="center">删除/新增</td>              
        </tr>   
                         

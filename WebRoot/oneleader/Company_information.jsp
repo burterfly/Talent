@@ -61,7 +61,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <dt>功能管理</dt>
     <dd><a href="Company_information.jsp" class="active">公司信息</a></dd>
     <dd><a href="Contract.jsp" >合同管理</a></dd>
-    <dd><a href="Pay.jsp">工资支出</a></dd>
+    
     <dd><a href="Talent_information.jsp">聘用记录</a></dd>     
  
    </dl>

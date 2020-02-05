@@ -59,9 +59,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <li>
    <dl>
     <dt>功能管理</dt>
-     <dd><a href="Information.jsp"  class="active">个人信息</a></dd>
+     <dd><a href="../twoadmin/listAllTalent.do"  class="active">个人信息</a></dd>
     <dd><a href="Experience.jsp" >履职经历</a></dd>
     <dd><a href="Wages.jsp" >工资明细</a></dd>
+    <dd><a href="Contract.jsp" >合同管理</a></dd>
     <dd><a href="Now.jsp"  >目前工作</a></dd>  
    </dl>
   </li> 
@@ -71,18 +72,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 
       <section class="rt_wrap content mCustomScrollbar">
-      
-       <form:form action="${ pageContext.request.contextPath}/twoadmin/selectHouse.do?SId=1"
-        modelAttribute="House" method="post" name="myform" >      
+                
       <div class="rt_content">
       <div class="page_title">
        <h2 class="fl">个人信息</h2>     
       </div>
-                  
-      </form:form>
-   
-      
-      
+        
       <table class="table">
        <tr>
         <th style="width: 70px; ">姓名</th>
@@ -90,7 +85,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <th style="width: 70px; ">性别</th>                  
         <th style="width: 70px; ">资格证书</th>        
         <th style="width: 70px; ">教育经历</th>                                 
-        <th style="width: 70px; ">业务技能</th>        
+        <th style="width: 70px; ">业务技能</th> 
+        <th style="width: 70px; ">综合评分</th>        
        </tr>
                     
        <tr>
@@ -99,7 +95,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <td class="center">女</td>                
         <td class="center">无</td>
         <td class="center">本科</td>
-        <td class="center">英语</td>            
+        <td class="center">英语</td>  
+         <td class="center">5</td>           
        </tr>   
                         
       </table>
