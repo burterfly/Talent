@@ -13,9 +13,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <title>后台管理系统</title>
 <meta name="author" content="DeathGhost" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/twoleader/css/style.css">
-<!--[if lt IE 9]>
-<script src="js/html5.js"></script>
-<![endif]-->
+
 <script src="js/jquery.js"></script>
 <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
 <script>
@@ -43,7 +41,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </script>
 </head>
 <body>
-<!--header-->
+
 <header>
  
  <h1><img src="${pageContext.request.contextPath}/twoleader/images/admin_logo.png"/></h1>
@@ -52,14 +50,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <li><a href="login.jsp" class="quit_icon">安全退出</a></li>
  </ul>
 </header>
-<!--aside nav-->
-<!--aside nav-->
+
 <aside class="lt_aside_nav content mCustomScrollbar">
  <ul>
   <li>
    <dl>
     <dt>功能管理</dt>
-     <dd><a href="../twoadmin/listAllTalent.do"  class="active">个人信息</a></dd>
+     <dd><a href="../twoleader/listAllTalent.do"  class="active">个人信息</a></dd>
     <dd><a href="Experience.jsp" >履职经历</a></dd>
     <dd><a href="Wages.jsp" >工资明细</a></dd>
     <dd><a href="Contract.jsp" >合同管理</a></dd>
@@ -88,17 +85,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <th style="width: 70px; ">业务技能</th> 
         <th style="width: 70px; ">综合评分</th>        
        </tr>
-                    
-       <tr>
-        <td class="center">hello</td>                                 
-        <td class="center">25</td>               
-        <td class="center">女</td>                
-        <td class="center">无</td>
-        <td class="center">本科</td>
-        <td class="center">英语</td>  
-         <td class="center">5</td>           
-       </tr>   
+            
+       <c:forEach items="${AllTalent}" var="talent"> 
                         
+       <tr>
+        <td class="center">${talent.tname}</td>                        
+        <td class="center">${talent.tage}</td>               
+        <td class="center">${talent.tsex}</td>                
+        <td class="center">${talent.tcer}</td>
+        <td class="center">${talent.tedu}</td>
+        <td class="center">${talent.tpro}</td>  
+        <td class="center"></td>           
+       </tr>      
+                   
+       </c:forEach>
+                          
       </table>
     
  </div>

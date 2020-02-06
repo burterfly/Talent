@@ -15,7 +15,7 @@ public class TalentController {
 	private TalentService talentservice;
 	
 	//所有房源显示
-	@RequestMapping("/twoadmin/listAllTalent")
+	@RequestMapping("/twoleader/listAllTalent")
 	public String listAllTalent(HttpSession session)
 	{		
 		

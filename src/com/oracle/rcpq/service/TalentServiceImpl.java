@@ -30,7 +30,7 @@ public  class TalentServiceImpl implements TalentService {
 				//-------------------------------------------------------
 				for(int i=0;i<listall.size();i++)
 				{
-					int a=listall.get(i).getTid();
+					String a=listall.get(i).getTname();
 					System.out.println(a);
 				}
 				
